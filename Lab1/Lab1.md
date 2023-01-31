@@ -8,9 +8,13 @@ My MSYS2 install had not been updated since installation which led to install is
 
 ![Screenshot of solution](Code_Solution.jpg)
 
+## Notes on VHDL and GHDL
+
+[VHDL](https://en.wikipedia.org/wiki/VHDL) stands for Very High-Speed Integrated Circuit Hardware Description Language and it is a coding language which is used to describe hardware. It can model digital systems at multiple levels of abstraction, ranging from system level to logic gates. [GHDL](http://ghdl.free.fr/) is an open source simulator for the VHDL language. It allows users to execute VHDL code directly on their pc.  
+
 ## Half Adder
 
-Following the guide set up by Dr. Lu I inputed the following commands to execute the Half Adder example:
+Following the guide set up by Dr. Lu I inputed the following commands to execute the Half Adder example from his [dsd](https://github.com/kevinwlu/dsd/tree/master/ghdl) GitHub repository:
 
 ```bash
 
@@ -24,4 +28,18 @@ Following the guide set up by Dr. Lu I inputed the following commands to execute
 
 The code produces the following result in GTKWave after auto adjusting the graph:
 
-![GTKWave result](GTKWave-Half_adder.JPG)
+![GTKWave result Half adder](GTKWave-Half_adder.JPG)
+
+## D Flip-flop
+
+Following the guide set up by Dr. Lu I inputed the following commands to execute the D Flip-flop example from his [dsd](https://github.com/kevinwlu/dsd/tree/master/ghdl) GitHub repository:
+
+  $ ghdl -a dff.vhdl
+  $ ghdl -a dff_tb.vhdl
+  $ ghdl -e dff_tb
+  $ ghdl -r dff_tb --vcd=dff.vcd
+  $ gtkwave dff.vcd
+
+The code prodces the following result in GTKWave ater auto adjusting the graph:
+
+![GTKWave result D Flip-flop]

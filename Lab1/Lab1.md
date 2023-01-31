@@ -43,6 +43,6 @@ Following the guide set up by Dr. Lu I inputed the following commands to execute
   gtkwave dff.vcd
 ```
 
-The code prodces the following result in GTKWave ater auto adjusting the graph:
+The code produces the following result in GTKWave ater auto adjusting the graph:
 
 ![GTKWave result D Flip-flop](D_Flip-flop.JPG)

@@ -12,12 +12,15 @@ My MSYS2 install had not been updated since installation which led to install is
 
 Following the guide set up by Dr. Lu I inputed the following commands to execute the Half Adder example:
 
+```bash
+
   $ ghdl -a ha.vhdl
   $ ghdl -a ha_tb.vhdl
   $ ghdl -e ha_tb
   $ ghdl -r ha_tb --vcd=ha.vcd
   ha_tb.vhdl:47:5:@5ns:(assertion error): Reached end of test
   $ gtkwave ha.vcd
+```
 
 The code produces the following result in GTKWave after auto adjusting the graph:
 

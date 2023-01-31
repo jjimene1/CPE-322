@@ -34,12 +34,15 @@ The code produces the following result in GTKWave after auto adjusting the graph
 
 Following the guide set up by Dr. Lu I inputed the following commands to execute the D Flip-flop example from his [dsd](https://github.com/kevinwlu/dsd/tree/master/ghdl) GitHub repository:
 
-  $ ghdl -a dff.vhdl
-  $ ghdl -a dff_tb.vhdl
-  $ ghdl -e dff_tb
-  $ ghdl -r dff_tb --vcd=dff.vcd
-  $ gtkwave dff.vcd
+```bash
+
+  ghdl -a dff.vhdl
+  ghdl -a dff_tb.vhdl
+  ghdl -e dff_tb
+  ghdl -r dff_tb --vcd=dff.vcd
+  gtkwave dff.vcd
+```
 
 The code prodces the following result in GTKWave ater auto adjusting the graph:
 
-![GTKWave result D Flip-flop]
+![GTKWave result D Flip-flop](D_Flip-flop.JPG)

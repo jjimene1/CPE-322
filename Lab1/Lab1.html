@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab 1 - GHDL and GTKWave</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="lab-1---ghdl-and-gtkwave">Lab 1 - GHDL and GTKWave</h1>
+<h2 id="installation">Installation</h2>
+<p>As the MSYS2 development environment was already installed on my machine I decided to directly download GHDL and GTKWave by using the MSYS install packages available from the MSYS2 website: <a href="https://packages.msys2.org/package/mingw-w64-x86_64-ghdl">GHDL</a>, <a href="https://packages.msys2.org/package/mingw-w64-x86_64-gtkwave?repo=mingw64">GTKWave</a></p>
+<p>My MSYS2 install had not been updated since installation which led to install issues with GTKWave. To fix, steps were followed from <a href="https://github.com/msys2/MSYS2-packages/issues/2343#issuecomment-780121556">this</a> GitHub forum. The specific steps are captured in the screenshot below:</p>
+<p><img src="file:///c:\msys64\home\Juan Jimenez\CPE-322\Lab1\Code_Solution.jpg" alt="Screenshot of solution"></p>
+<h2 id="notes-on-vhdl-and-ghdl">Notes on VHDL and GHDL</h2>
+<p><a href="https://en.wikipedia.org/wiki/VHDL">VHDL</a> stands for Very High-Speed Integrated Circuit Hardware Description Language and it is a coding language which is used to describe hardware. It can model digital systems at multiple levels of abstraction, ranging from system level to logic gates. <a href="http://ghdl.free.fr/">GHDL</a> is an open source simulator for the VHDL language. It allows users to execute VHDL code directly on their pc.</p>
+<h2 id="half-adder">Half Adder</h2>
+<p>Following the guide set up by Dr. Lu I inputed the following commands to execute the Half Adder example from his <a href="https://github.com/kevinwlu/dsd/tree/master/ghdl">dsd</a> GitHub repository:</p>
+<pre><code class="language-bash">
+  $ ghdl -a ha.vhdl
+  $ ghdl -a ha_tb.vhdl
+  $ ghdl -e ha_tb
+  $ ghdl -r ha_tb --vcd=ha.vcd
+  ha_tb.vhdl:47:5:@5ns:(assertion error): Reached end of <span class="hljs-built_in">test</span>
+  $ gtkwave ha.vcd
+</code></pre>
+<p>The code produces the following result in GTKWave after auto adjusting the graph:</p>
+<p><img src="file:///c:\msys64\home\Juan Jimenez\CPE-322\Lab1\GTKWave-Half_adder.JPG" alt="GTKWave result Half adder"></p>
+<h2 id="d-flip-flop">D Flip-flop</h2>
+<p>Following the guide set up by Dr. Lu I inputed the following commands to execute the D Flip-flop example from his <a href="https://github.com/kevinwlu/dsd/tree/master/ghdl">dsd</a> GitHub repository:</p>
+<pre><code class="language-bash">
+  ghdl -a dff.vhdl
+  ghdl -a dff_tb.vhdl
+  ghdl -e dff_tb
+  ghdl -r dff_tb --vcd=dff.vcd
+  gtkwave dff.vcd
+</code></pre>
+<p>The code produces the following result in GTKWave ater auto adjusting the graph:</p>
+<p><img src="file:///c:\msys64\home\Juan Jimenez\CPE-322\Lab1\D_Flip-flop.JPG" alt="GTKWave result D Flip-flop"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

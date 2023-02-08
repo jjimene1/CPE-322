@@ -4,7 +4,7 @@
 
 As part of the lab we are going to execute some terminal commands, display their output on my local machine, and we are going to define their function based on these outputs:
 
-**hostname**:
+### hostname
 
 ```bash
 $ hostname
@@ -13,7 +13,7 @@ DESKTOP-JQOE2UL
 
 This command displays the current host, domain, or node name of the system. It uniquely identifies a computer in a network.
 
-**env**:
+### env
 
 ```bash
 
@@ -115,7 +115,7 @@ _=/usr/bin/env
 
 env can be used for [several purposes](https://www.geeksforgeeks.org/env-command-in-linux-with-examples/) depending on arguments that are passed to it. Without arguments as seen in this example it simply prints all environment variables, although it can also be used to run a utility or command in a custom environment. 
 
-**ps**:
+### ps
 
 ```bash
 $ ps

@@ -1,5 +1,29 @@
 # Lab 2 - Raspberry Pi and Command Shell
 
+## Lesson 1 Notes
+
+Previous Raspberry Pi setup was completed as part of CPE390. SSH access has been enabled and the Raspberry Pi OS has been installed on my local Raspberry Pi. More on Raspberry Pi setup can be found [here](https://github.com/kevinwlu/iot/tree/master/lesson1).
+
+## Lesson 2 Notes
+
+Having setup my Raspberry Pi I decided to utilize some of the commands from lesson 2 to test out the General-purpose input/output (GPIO) and serial communication capbilities of the Raspberry Pi. I specfically implemented part of lab 2C which can be referenced in [this link](https://github.com/kevinwlu/iot/tree/master/lesson2). Implementing the following terminal commands after accesing the Raspberry Pi through SSH results in the following output:
+
+![raspberry Pi I/O](lesson2.gif)
+
+The commands which make the magic happen can be found below:
+
+```bash
+jj@raspberypi:~ $ sudo su
+root@raspberypi:/home/jj# echo 18 > /sys/class/gpio/export
+root@raspberypi:/home/jj# cd /sys/class/gpio/gpio18
+root@raspberypi:/sys/class/gpio/gpio18# echo out > direction
+root@raspberypi:/sys/class/gpio/gpio18# echo 1 > value
+root@raspberypi:/sys/class/gpio/gpio18# echo 0 > value
+root@raspberypi:/sys/class/gpio/gpio18# cd /home/pi
+root@raspberypi:/home/jj# echo 18 > /sys/class/gpio/unexport
+root@raspberypi:/home/jj# exit
+```
+
 ## Lab Commands: Execution and Output
 
 As part of the lab we are going to execute some terminal commands, display their output on my local machine, and we are going to define their function based on these outputs:

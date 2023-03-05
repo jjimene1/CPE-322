@@ -142,8 +142,8 @@ View app at <http://127.0.0.1:8000>.
 
 If everything went succesfully the admin site should look like this:
 
-![Working Admin Site](DjangoAdmin.jpg)
+![Working Admin Site](DjangoAdmin.JPG)
 
 The website should look like this after adding the appropiate data:
 
-![Working Website](Website.jpg)
+![Working Website](Website.JPG)

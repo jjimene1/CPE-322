@@ -71,7 +71,7 @@ jj@raspberrypi:~/stevens/stevens $ cd ..
 jj@raspberrypi:~/stevens $ cd myapp
 jj@raspberrypi:~/stevens/myapp $ ls
 admin.py  apps.py  __init__.py  migrations  models.py  tests.py  views.py
-jj@raspberrypi:~/stevens/myapp $ cp ~/iot/lesson4/stevens/admin.py .
+jj@raspberrypi:~/stevens/myapp $ cp ~/iot/lesson4/stevens/admin.py . 
 jj@raspberrypi:~/stevens/myapp $ cp ~/iot/lesson4/stevens/models.py .
 jj@raspberrypi:~/stevens/myapp $ cp ~/iot/lesson4/stevens/views.py .
 ```
@@ -105,7 +105,7 @@ jj@raspberrypi:~/stevens/myapp/static/myapp $ cd ~/stevens
 #### After the first time, skip these three steps if no changes
 
 ```bash
-jj@raspberrypi:~/stevens $ python3 manage.py makemigrations myapp
+jj@raspberrypi:~/stevens $ python3 manage.py makemigrations myapp 
 jj@raspberrypi:~/stevens $ python3 manage.py migrate
 jj@raspberrypi:~/stevens $ python3 manage.py createsuperuser
 Username (leave blank to use 'jj'):
@@ -114,3 +114,36 @@ Password: ------
 Password (again): ------
 Superuser created successfully.
 ```
+
+#### Run the Django Project
+
+```bash
+jj@raspberrypi:~/stevens $ python3 manage.py runserver
+```
+
+#### Open the Chromium browser on Raspberry Pi via VNC Viewer
+
+Go to <http://127.0.0.1:8000/admin>
+
+Login with Django administration username (jj) and password.
+
+Click temperature data to add:
+
+* Date and time in YYYY-MM-DD HH:MM:SS.
+* Temperature in Fahrenheit
+* Latitude 40.7451
+* Longitude -74.0255
+
+Click SAVE.
+
+View app at <http://127.0.0.1:8000>.
+
+#### Working app and Output Website
+
+If everything went succesfully the admin site should look like this:
+
+![Working Admin Site](DjangoAdmin.png)
+
+The website should look like this after adding the appropiate data:
+
+![Working Website](Website.png)

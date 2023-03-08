@@ -39,3 +39,59 @@ MyCPU CPU Usage:   11.9 %
 MyCPU 2023-03-04 14:47:14
 MyCPU CPU Usage:   14.0 %
 ```
+
+## Eclipse Mosquitto and Eclipse Paho
+
+### Install on Rapsberry Pi
+
+```bash
+jjimenez@raspberrypi:~ $ sudo apt-get install mosquitto mosquitto-clients
+jjimenez@raspberrypi:~ $ mosquitto_sub -h localhost -v -t "\$SYS/#"
+```
+
+### On Raspberry Pi OS (Bullseye), change /opt/vc/bin/vcgencmd to /usr/bin/vcgencmd in system_info.py
+
+* Copy ~/iot/lesson5/system_info.py to ~/demo
+* Copy ~/iot/lesson5/subraspi.py to ~/demo
+* Copy ~/iot/lesson5/pubraspi.py to ~/demo
+* Replace topic "Raspberry Pi" with a unique hostname in both subraspi.py and pubraspi.py
+* Run subraspi.py on Terminal 1 and pubraspi.py on Terminal 2
+
+This is the output on my Raspberry Pi 4B.
+
+Subscriber:
+
+```bash
+jj Temperature: 53.0 C
+jj CPU Usage:   0.2 %
+jj 2023-03-07 19:18:42
+jj Temperature: 53.5 C
+jj CPU Usage:   0.2 %
+jj 2023-03-07 19:18:52
+jj Temperature: 52.5 C
+jj CPU Usage:   0.2 %
+jj 2023-03-07 19:19:02
+jj Temperature: 53.5 C
+jj CPU Usage:   0.3 %
+jj 2023-03-07 19:19:12
+jj Temperature: 54.0 C
+jj CPU Usage:   3.2 %
+jj 2023-03-07 19:19:22
+jj Temperature: 53.5 C
+jj CPU Usage:   2.0 %
+
+```
+
+Publisher:
+
+```bash
+Free RAM: 99 (3838)
+Number of processes: 192
+Up time: 13 days,  4:43
+Number of connections: 6
+Temperature in C: 53.0
+IP-address: 192.168.1.179
+/bin/sh: 1: /opt/vc/bin/vcgencmd: not found
+CPU speed in MHz:
+2023-03-07 19:14:47
+```
